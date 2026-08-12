@@ -39,7 +39,7 @@ class ApiServiceImpl implements ApiService {
     if (response.statusCode == 200) {
       var loginResponse = LoginResponse.fromJson(jsonDecode(response.body));
       TokenStoreLocal.setRefreshToken(loginResponse.refreshToken ?? "");
-      TokenStoreLocal.setRefreshToken(loginResponse.accessToken ?? "");
+      TokenStoreLocal.setAccessToken(loginResponse.accessToken ?? "");
       return true;
     }
     return false;
