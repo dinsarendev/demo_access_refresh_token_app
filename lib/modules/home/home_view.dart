@@ -23,11 +23,11 @@ class HomeView extends GetView<HomeController> {
               ListTile(
                 onTap: (){
                   Navigator.pop(context);
-                  Get.toNamed(AppRouteName.adminPost);
+                  Get.toNamed(AppRouteName.adminDashboard);
                 },
                 leading: Icon(Icons.post_add, color: Colors.white,),
                 trailing: Icon(Icons.navigate_next, color: Colors.white,),
-                title: Text("post".tr, style: TextStyle(color: Colors.white),),
+                title: Text("dashboard".tr, style: TextStyle(color: Colors.white),),
               )
             ],
           ),

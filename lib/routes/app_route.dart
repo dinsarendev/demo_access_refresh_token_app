@@ -1,3 +1,5 @@
+import 'package:demo_access_refresh_token_app/modules/admin/dashboard/dashboard_binding.dart';
+import 'package:demo_access_refresh_token_app/modules/admin/dashboard/dashboard_view.dart';
 import 'package:demo_access_refresh_token_app/routes/app_route_name.dart';
 import 'package:get/get.dart';
 
@@ -32,6 +34,11 @@ class AppRoute {
         name: AppRouteName.adminPostForm,
         page: () => PostFormView(),
         binding: PostFormBinding(),
+      ),
+      GetPage(
+        name: AppRouteName.adminDashboard,
+        page: () => DashboardView(),
+        binding: DashboardBinding(),
       ),
     ];
   }

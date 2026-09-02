@@ -5,4 +5,5 @@ class AppRouteName {
   static const String login = "/login";
   static const String adminPost = "/admin/posts";
   static const String adminPostForm = "/admin/posts/form";
+  static const String adminDashboard = "/admin/dashboard";
 }

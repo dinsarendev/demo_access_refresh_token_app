@@ -7,11 +7,13 @@ class Messages extends Translations {
       'post': 'Post',
       'home': 'Home',
       'login': 'Login',
+      'dashboard':"Dashboard"
     },
     'km_KH': {
       'post': 'ប្រកាស',
       'home': 'ទំព័រដើម',
       'login': 'ចូល',
+      'dashboard':"ផ្ទាំងគ្រប់គ្រង"
     }
   };
 }
