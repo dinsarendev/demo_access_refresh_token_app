@@ -1,4 +1,4 @@
-import 'package:demo_access_refresh_token_app/modules/post/post_form_controller.dart';
+import 'package:demo_access_refresh_token_app/modules/admin/post/post_form_controller.dart';
 import 'package:demo_access_refresh_token_app/widgets/button_custom_widget.dart';
 import 'package:demo_access_refresh_token_app/widgets/input_custom_widget.dart';
 import 'package:flutter/material.dart';

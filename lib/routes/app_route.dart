@@ -1,14 +1,14 @@
 import 'package:demo_access_refresh_token_app/routes/app_route_name.dart';
 import 'package:get/get.dart';
 
+import '../modules/admin/post/post_binding.dart';
+import '../modules/admin/post/post_form_binding.dart';
+import '../modules/admin/post/post_form_view.dart';
+import '../modules/admin/post/post_view.dart';
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
 import '../modules/login/login_binding.dart';
 import '../modules/login/login_view.dart';
-import '../modules/post/post_binding.dart';
-import '../modules/post/post_form_binding.dart';
-import '../modules/post/post_form_view.dart';
-import '../modules/post/post_view.dart';
 import '../modules/splash/splash_binding.dart';
 import '../modules/splash/splash_view.dart';
 

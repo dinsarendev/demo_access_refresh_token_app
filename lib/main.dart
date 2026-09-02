@@ -1,14 +1,4 @@
 import 'package:demo_access_refresh_token_app/binding/initial_binding.dart';
-import 'package:demo_access_refresh_token_app/modules/home/home_binding.dart';
-import 'package:demo_access_refresh_token_app/modules/home/home_view.dart';
-import 'package:demo_access_refresh_token_app/modules/login/login_binding.dart';
-import 'package:demo_access_refresh_token_app/modules/login/login_view.dart';
-import 'package:demo_access_refresh_token_app/modules/post/post_binding.dart';
-import 'package:demo_access_refresh_token_app/modules/post/post_form_binding.dart';
-import 'package:demo_access_refresh_token_app/modules/post/post_form_view.dart';
-import 'package:demo_access_refresh_token_app/modules/post/post_view.dart';
-import 'package:demo_access_refresh_token_app/modules/splash/splash_binding.dart';
-import 'package:demo_access_refresh_token_app/modules/splash/splash_view.dart';
 import 'package:demo_access_refresh_token_app/routes/app_route.dart';
 import 'package:demo_access_refresh_token_app/routes/app_route_name.dart';
 import 'package:demo_access_refresh_token_app/translations/messages.dart';

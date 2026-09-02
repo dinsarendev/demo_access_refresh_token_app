@@ -1,7 +1,8 @@
 import 'package:demo_access_refresh_token_app/routes/app_route_name.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../widgets/loading_widget.dart';
+
+import '../../../widgets/loading_widget.dart';
 import 'post_controller.dart';
 
 class PostView extends GetView<PostController> {
