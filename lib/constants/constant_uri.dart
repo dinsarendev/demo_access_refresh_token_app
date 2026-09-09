@@ -1,6 +1,9 @@
 class ConstantUri {
+  ConstantUri._();
   static const baseUri = "http://10.30.1.93:30033";
   static const login = "$baseUri/api/oauth/token";
   static const refreshToken = "$baseUri/api/oauth/refresh";
   static const getAllPostPath = "$baseUri/api/app/post";
+  static const getAllCategory = "$baseUri/api/app/post/category";
+  static const getAdminCategory = "$baseUri/api/app/post/category";
 }
