@@ -5,4 +5,7 @@ abstract class ApiService {
   Future<LoginResponse> login({LoginRequest? body});
   Future<bool> refreshToken(String token);
   Future<dynamic> getApi(String url,{String? param});
+  Future<dynamic> postApi(String url, {dynamic body});
+  Future<dynamic> putApi(String url, {dynamic body});
+  Future<dynamic> deleteApi(String url);
 }

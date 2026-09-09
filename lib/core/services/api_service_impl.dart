@@ -75,4 +75,101 @@ class ApiServiceImpl implements ApiService {
     );
     return response.body;
   }
+
+  dynamic postApiRetry(String url, dynamic body) async {
+    var response = await httpClient.post(
+      body: body,
+      Uri.parse(url),
+      headers: {"Authorization": "Bearer ${TokenStoreLocal.getAccessToken()}"},
+    );
+    return response.body;
+  }
+
+  @override
+  Future<dynamic> postApi(String url, {body}) async {
+    var response = await httpClient.post(
+      body: body,
+      Uri.parse(url),
+      headers: {"Authorization": "Bearer ${TokenStoreLocal.getAccessToken()}"},
+    );
+    if (response.statusCode == 200) {
+      return response.body;
+    } else if (response.statusCode == 401) {
+      var refreshResponse = await refreshToken(
+        TokenStoreLocal.getRefreshToken(),
+      );
+      if (refreshResponse == false) {
+        TokenStoreLocal.removeToken();
+        Get.offNamed(AppRouteName.login);
+        return;
+      } else {
+        return await postApiRetry(url, body);
+      }
+    }
+    return null;
+  }
+
+  dynamic putApiRetry(String url, dynamic body) async {
+    var response = await httpClient.put(
+      body: body,
+      Uri.parse(url),
+      headers: {"Authorization": "Bearer ${TokenStoreLocal.getAccessToken()}"},
+    );
+    return response.body;
+  }
+
+  dynamic deleteApiRetry(String url) async {
+    var response = await httpClient.delete(
+      Uri.parse(url),
+      headers: {"Authorization": "Bearer ${TokenStoreLocal.getAccessToken()}"},
+    );
+    return response.body;
+  }
+
+  @override
+  Future<dynamic> putApi(String url, {body}) async {
+    var response = await httpClient.put(
+      body: body,
+      Uri.parse(url),
+      headers: {"Authorization": "Bearer ${TokenStoreLocal.getAccessToken()}"},
+    );
+    if (response.statusCode == 200) {
+      return response.body;
+    } else if (response.statusCode == 401) {
+      var refreshResponse = await refreshToken(
+        TokenStoreLocal.getRefreshToken(),
+      );
+      if (refreshResponse == false) {
+        TokenStoreLocal.removeToken();
+        Get.offNamed(AppRouteName.login);
+        return;
+      } else {
+        return await putApiRetry(url, body);
+      }
+    }
+    return null;
+  }
+
+  @override
+  Future<dynamic> deleteApi(String url) async {
+    var response = await httpClient.delete(
+      Uri.parse(url),
+      headers: {"Authorization": "Bearer ${TokenStoreLocal.getAccessToken()}"},
+    );
+    if (response.statusCode == 200) {
+      return response.body;
+    } else if (response.statusCode == 401) {
+      var refreshResponse = await refreshToken(
+        TokenStoreLocal.getRefreshToken(),
+      );
+      if (refreshResponse == false) {
+        TokenStoreLocal.removeToken();
+        Get.offNamed(AppRouteName.login);
+        return;
+      } else {
+        return await deleteApiRetry(url);
+      }
+    }
+    return null;
+  }
 }
